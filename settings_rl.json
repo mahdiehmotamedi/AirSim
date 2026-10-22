@@ -1,0 +1,12 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Multirotor",
+  "ViewMode": "NoDisplay",
+  "ClockType": "SteppableClock",
+  "Vehicles": {
+    "Drone1": { "VehicleType": "SimpleFlight", "X": 0, "Y": 0, "Z": 0, "Yaw": 0 },
+    "Drone2": { "VehicleType": "SimpleFlight", "X": 4, "Y": 0, "Z": 0, "Yaw": 0 },
+    "Drone3": { "VehicleType": "SimpleFlight", "X": 0, "Y": 4, "Z": 0, "Yaw": 0 },
+    "Drone4": { "VehicleType": "SimpleFlight", "X": 4, "Y": 4, "Z": 0, "Yaw": 0 }
+  }
+}

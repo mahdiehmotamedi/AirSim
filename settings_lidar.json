@@ -1,0 +1,29 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Multirotor",
+  "ViewMode": "FlyWithMe",
+  "Sensors": {
+    "LidarFront": {
+      "SensorType": 6,
+      "Enabled": true,
+      "NumberOfChannels": 16,
+      "RotationsPerSecond": 10,
+      "PointsPerSecond": 10000,
+      "X": 0, "Y": 0, "Z": -0.1,
+      "Roll": 0, "Pitch": 0, "Yaw": 0,
+      "VerticalFOVUpper": 10,
+      "VerticalFOVLower": -10,
+      "DrawDebugPoints": false
+    }
+  },
+  "Vehicles": {
+    "Drone1": {
+      "VehicleType": "SimpleFlight",
+      "X": 0, "Y": 0, "Z": 0, "Yaw": 0,
+      "Sensors": { "LidarFront": { "Enabled": true } }
+    },
+    "Drone2": { "VehicleType": "SimpleFlight", "X": 4, "Y": 0, "Z": 0, "Yaw": 0 },
+    "Drone3": { "VehicleType": "SimpleFlight", "X": 0, "Y": 4, "Z": 0, "Yaw": 0 },
+    "Drone4": { "VehicleType": "SimpleFlight", "X": 4, "Y": 4, "Z": 0, "Yaw": 0 }
+  }
+}

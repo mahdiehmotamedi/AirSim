@@ -1,0 +1,11 @@
+# Python client side of the AirSim/Colosseum setup
+# Tested with Python 3.8 - 3.10 (msgpack-rpc-python is not 3.11+ ready;
+# on 3.11+ install airsim from the Colosseum PythonClient folder instead).
+airsim==1.8.1
+msgpack-rpc-python
+numpy
+opencv-python
+gymnasium
+pettingzoo
+stable-baselines3
+tensorboard

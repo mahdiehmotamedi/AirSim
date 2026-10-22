@@ -1,0 +1,58 @@
+GUARDIAN shield benchmark - 05_guardian_shield.py
+Protocol: 400 evaluation steps per configuration after a 20-step warm-up;
+values are ms per control step (100 ms interval). Host: commodity dual-core
+x86-64 server CPU, Python 3.12, NumPy 2.1.3, vectorized NumPy, no GPU.
+The urban regime propagates the six moving obstacles one step ahead with
+their estimated velocities (paper Section 4.4).
+
+=== SELF-TEST (K, fallback, head-on, obstacle, risk utilities) ===
+K = 11 discrete actions: 4 sectors x 2 magnitudes + climb/descend/hold
+fallback index: 8 = [ 0.  0. -2.]
+chosen: [10 10] | fallback: [False False] | min margin: 0.40 m
+one-step separation after filter: 1.60 m (before: 1.60 m)
+obstacle test -> chosen velocity: [0. 0. 0.] (must differ from nominal)
+CVaR_0.1(q) = -0.9 | blended(beta=0.4) = -0.36
+alignment(att=[0.6,0.3,0.1], danger of margins=[1,2,3]) = 1.0 (positive = attention on the most critical neighbor)
+quantile Huber (perfect fit) = 0.0173
+ agents   graph   ms/step  share of 100ms
+      6   dense      0.08            0.0%
+      8   dense      0.09            0.0%
+     12   dense      0.13            0.0%
+     20   dense      0.25            0.0%
+     30   dense      0.48            0.0%
+(control interval: 100 ms -- the last column is the used fraction)
+[OK] GUARDIAN shield self-test finished.
+
+=== REPEAT RUNS (both regimes, 2x) ===
+--- run1-dense ---
+ agents   graph   ms/step  share of 100ms
+      6   dense      0.08            0.0%
+      8   dense      0.09            0.0%
+     12   dense      0.13            0.0%
+     20   dense      0.26            0.0%
+     30   dense      0.49            0.0%
+(control interval: 100 ms -- the last column is the used fraction)
+--- run1-urban ---
+ agents   graph   ms/step  share of 100ms
+      6   urban      0.12            0.0%
+      8   urban      0.14            0.0%
+     12   urban      0.19            0.0%
+     20   urban      0.35            0.0%
+     30   urban      0.59            0.0%
+(control interval: 100 ms -- the last column is the used fraction)
+--- run2-dense ---
+ agents   graph   ms/step  share of 100ms
+      6   dense      0.08            0.0%
+      8   dense      0.09            0.0%
+     12   dense      0.13            0.0%
+     20   dense      0.25            0.0%
+     30   dense      0.48            0.0%
+(control interval: 100 ms -- the last column is the used fraction)
+--- run2-urban ---
+ agents   graph   ms/step  share of 100ms
+      6   urban      0.12            0.0%
+      8   urban      0.14            0.0%
+     12   urban      0.19            0.0%
+     20   urban      0.34            0.0%
+     30   urban      0.59            0.0%
+(control interval: 100 ms -- the last column is the used fraction)
